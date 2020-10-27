@@ -10,6 +10,7 @@
 
 ## To-Do
 
+- **Test `delay` and add user input**
 - Update `test` filenames to produce daily graphs (name it today’s date using `datetime`).
 - Set up a check to see if a certain amount of time has passed and to stop the application after that.
 

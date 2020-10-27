@@ -1,6 +1,6 @@
 import csv
 import matplotlib.pyplot as plt
-import matplotlib.ticker as tick
+import matplotlib.ticker as tick    # What is tick used for????
 
 times = []
 download = []
