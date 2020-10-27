@@ -4,8 +4,21 @@ import speedtest
 import time
 
 s = speedtest.Speedtest()
-t_interval = int(input("Enter an interval to test for (seconds): "))
-time_format = "%H:%M:%S"
+
+
+def user_input():
+    while True:
+        try:
+            s = int(input("Enter an interval to test for (minutes): "))
+            return s * 60
+        except ValueError:
+            print("Invalid input. Please enter a valid number of minutes: ")
+
+
+t_interval = user_input()
+print("Computing your internet speeds.\nPress ctrl+c to exit")
+
+time_format = "%H:%M"
 
 with open('test2.csv', mode='w') as speedtestcsv:
     write_csv = csv.DictWriter(speedtestcsv, fieldnames=[

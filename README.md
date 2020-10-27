@@ -4,8 +4,7 @@
 2. Write to csv
 3. Produce visualization using matplotlib.
 
-   - Delay between readings is currently set to 60 seconds. Edit the `delay` variable (in seconds) in `monitor.py` to change.
-   - Edit `time_format` to change the time format (currently `%H:%M`)
+   - Enter time delay interval in minutes time format returned is `%H:%M`
    - `visualize.py` produces `test-graph.jpg`
 
 ## To-Do
