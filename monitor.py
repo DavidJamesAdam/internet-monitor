@@ -4,10 +4,10 @@ import speedtest
 import time
 
 s = speedtest.Speedtest()
-# delay = 60
+t_interval = int(input("Enter an interval to test for (seconds): "))
 time_format = "%H:%M:%S"
 
-with open('test.csv', mode='w') as speedtestcsv:
+with open('test2.csv', mode='w') as speedtestcsv:
     write_csv = csv.DictWriter(speedtestcsv, fieldnames=[
         'Time', 'Download Speed', 'Upload Speed'])
     write_csv.writeheader()
@@ -20,4 +20,4 @@ with open('test.csv', mode='w') as speedtestcsv:
         write_csv.writerow({'Time': current_time,
                             'Download Speed': download,
                             'Upload Speed': upload})
-        # time.sleep(delay)
+        time.sleep(t_interval)
