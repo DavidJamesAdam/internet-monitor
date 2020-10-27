@@ -1,11 +1,12 @@
 # Monitor Internet Speeds With Python
 
-1. Use Python and the speedtest-cli to continuslosy monitor internet speeds.
+1. Use Python and the speedtest-cli to continuously monitor internet speeds.
+2. Write to csv
+3. Produce visualization using matplotlib.
 
-   - Currently set to 60 seconds. Edit the `delay` variable (in seconds) in `monitor.py` to change.)
-   - edit time_format to change the time format %H:%M
-
-2. Produce visualization using matplotlib.
+   - Delay between readings is currently set to 60 seconds. Edit the `delay` variable (in seconds) in `monitor.py` to change.
+   - Edit `time_format` to change the time format (currently `%H:%M`)
+   - `visualize.py` produces `test-graph.jpg`
 
 ## To-Do
 
