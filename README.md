@@ -10,9 +10,8 @@
 
 ## To-Do
 
-- Now we are gathering information and storing it in a csv. You could do all sorts of clever stuff with the filename like name it today’s date using datetime but for now I will keep it as test.
-
-You could also set up a check to see if a certain amount of time has passed and to stop the application after that but I will leave that up to your own creativity.
+- Update `test` filenames to produce daily graphs (name it today’s date using `datetime`).
+- Set up a check to see if a certain amount of time has passed and to stop the application after that.
 
 ## Requirements
 
