@@ -16,6 +16,7 @@ with open('test.csv', 'r') as csvfile:
 
 print(times, "\n", download, "\n", upload)
 
+# matplotlib
 plt.figure(30)
 plt.plot(times, download, label='download', color='r')
 plt.plot(times, upload, label='upload', color='b')
