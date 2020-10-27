@@ -1,5 +1,5 @@
 import csv
-import datetime
+from datetime import *
 import speedtest
 import time
 
@@ -19,13 +19,15 @@ t_interval = user_input()
 print("Computing your internet speeds.\nPress ctrl+c to exit")
 
 time_format = "%H:%M"
+date_now = datetime.now().strftime("%d-%m-%Y")
 
-with open('test2.csv', mode='w') as speedtestcsv:
+
+with open(f"Output/{date_now}.csv", mode='w') as speedtestcsv:
     write_csv = csv.DictWriter(speedtestcsv, fieldnames=[
         'Time', 'Download Speed', 'Upload Speed'])
     write_csv.writeheader()
     while True:
-        current_time = datetime.datetime.now().strftime(time_format)
+        current_time = datetime.now().strftime(time_format)
         download = round((round(s.download()) / 1048576), 2)
         upload = round((round(s.upload()) / 1048576), 2)
         print(
