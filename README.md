@@ -1,6 +1,7 @@
 # Monitor Internet Speeds With Python
 
-Use Python to monitor internet speeds and produce visualization using matplotlib.
+1. Use Python and the speedtest-cli to monitor internet speeds
+2. Produce visualization using matplotlib.
 
 ## Requirements
 
