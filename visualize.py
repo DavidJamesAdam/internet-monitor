@@ -1,12 +1,20 @@
 import csv
+from datetime import datetime
 import matplotlib.pyplot as plt
-import matplotlib.ticker as tick    # What is tick used for????
+
+import numpy as np
+import pandas as pd
+
 
 times = []
 download = []
 upload = []
 
-with open('test.csv', 'r') as csvfile:
+date_now = datetime.now().strftime('%Y-%m-%d')
+# TODO:  get this to read from monitor.py
+
+
+with open(f"Output/2020-10-27.csv", 'r') as csvfile:    # date_now fileaname
     plots = csv.reader(csvfile, delimiter=',')
     next(csvfile)
     for row in plots:
@@ -17,11 +25,11 @@ with open('test.csv', 'r') as csvfile:
 print(times, "\n", download, "\n", upload)
 
 # matplotlib
-plt.figure(30)
-plt.plot(times, download, label='download', color='r')
-plt.plot(times, upload, label='upload', color='b')
-plt.xlabel('time')
-plt.ylabel('speed in Mb/s')
-plt.title("internet speed")
+plt.figure(50)
+plt.plot(times, download, label='Download Speed', color='r')
+plt.plot(times, upload, label='Upload Speed', color='g')
+plt.xlabel('Time')      # How to make this more ligible????
+plt.ylabel('Speed (Mb/s)')
+plt.title(f"Internet Speed {date_now}")
 plt.legend()
 plt.savefig('test_graph.jpg', bbox_inches='tight')

@@ -5,6 +5,11 @@ import time
 
 
 def user_interval():
+    """[summary] add delay
+
+    Returns:
+        [type]: [description]
+    """
     while True:
         try:
             s = int(input("Enter an interval to test for (minutes): "))
@@ -17,6 +22,11 @@ t_interval = user_interval()
 
 
 def runtime():
+    """[summary] 
+
+    Returns:
+        [type]: [description]
+    """
     while True:
         try:
             r = int(input("How long do you want the test to run for (minutes): "))
@@ -26,7 +36,6 @@ def runtime():
 
 
 t_end = datetime.now() + timedelta(minutes=(runtime()))
-# NOTE: class datetime.timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0)
 
 print("Computing your internet speeds.\nPress ctrl+c to exit")
 
@@ -36,6 +45,8 @@ date_now = datetime.now().strftime('%Y-%m-%d')
 
 # TODO: get os to mkdir ` os.mkdir(path[, mode]) `
 
+
+# Should be a function, run test converts and write csv.
 with open(f"Output/{date_now}.csv", mode='w') as speedtestcsv:
     write_csv = csv.DictWriter(speedtestcsv, fieldnames=[
         'Time', 'Download Speed', 'Upload Speed'])
@@ -45,6 +56,7 @@ with open(f"Output/{date_now}.csv", mode='w') as speedtestcsv:
             break
         else:
             current_time = datetime.now().strftime(time_format)
+            # convert to mb/s
             download = round((round(st.download()) / 1048576), 2)
             upload = round((round(st.upload()) / 1048576), 2)
             print(
@@ -54,5 +66,6 @@ with open(f"Output/{date_now}.csv", mode='w') as speedtestcsv:
                                 'Upload Speed': upload})
             time.sleep(t_interval)
 
+# TODO: auto run visualize.py
 
 raise SystemExit

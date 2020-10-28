@@ -1,6 +1,6 @@
 # Monitor Internet Speeds With Python
 
-1. Use Python and the speedtest-cli to continuously monitor internet speeds.
+1. Use Python and the speedtest-cli to continuously monitor upload and download speeds.
 2. Write to csv
 3. Produce visualization using matplotlib.
 
@@ -12,6 +12,7 @@
 - Update `test` filenames to produce daily graphs (name it today’s date using `datetime`).
 - Set up a check to see if a certain amount of time has passed and to stop the application after that.
 - Put output in a folder
+- Comment code
 - Write up README / How to.
 - `os.mkdir` dated for csv + visulation
 
