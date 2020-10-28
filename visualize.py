@@ -32,4 +32,4 @@ plt.xlabel('Time')      # How to make this more ligible????
 plt.ylabel('Speed (Mb/s)')
 plt.title(f"Internet Speed {date_now}")
 plt.legend()
-plt.savefig('test_graph.jpg', bbox_inches='tight')
+plt.savefig(f"Output/2020-10-27.jpg", bbox_inches='tight')

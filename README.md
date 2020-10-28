@@ -15,6 +15,8 @@
 - Comment code
 - Write up README / How to.
 - `os.mkdir` dated for csv + visulation
+- Create crontab scheduler "a crontab`scheduler (called`#`) is also provided.
+- Add license
 
 ## How to Use
 
