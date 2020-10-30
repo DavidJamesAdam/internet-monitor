@@ -8,7 +8,7 @@ Use Python and the speedtest-cli to continuously monitor upload and download spe
 
 ## To-Do
 
-- `os.mkdir` dated for csv + visulation (cache)
+- `os.mkdir` dated for cache + visualization
 - Comment & refactor code
 - Write up README / How to.
 - Add license
