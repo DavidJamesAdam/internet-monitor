@@ -1,35 +1,26 @@
 # Monitor Internet Speeds With Python
 
-1. Use Python and the speedtest-cli to continuously monitor upload and download speeds.
-2. Write to csv
-3. Produce visualization using matplotlib.
+_version: 0.0.2_
 
-   - Enter time delay interval in minutes time format returned is `%H:%M`
-   - `visualize.py` produces `test-graph.jpg`
+Use Python and the speedtest-cli to continuously monitor upload and download speeds & produce a visualization using matplotlib.
+
+![Picture of Output](./Output/2020-10-30.jpg)
 
 ## To-Do
 
 - `os.mkdir` dated for csv + visulation (cache)
 - Comment & refactor code
 - Write up README / How to.
-- Create crontab scheduler "a crontab`scheduler (called`#`) is also provided.
 - Add license
 
 ## How to Use
 
-Run `python monitor.py` to collect data.
-You will be asked to enter an interval... in minutes
-You wil then be asked how long to run the test for
-Run `python vizualize.py` to generate generate a graphical representation.
-
-![Picture of Output](./Output/2020-10-30.jpg)
-
-You could set a chron job to run daily.
-
-`(heres the code for this)`
+1. Open your favorite terminal and run `python monitor.py`.
+   You will be asked to enter time delay interval in minutes. (Time format returned is `%H:%M`).
+2. You will then be asked how long you wish to run the test for. (Again, in minutes).
+3. A graphical representation of your internet performance will be produced and stored in `#`.
 
 ## Dependancies
 
-- `set links`
 - matplotlib
 - speedtest-cli
