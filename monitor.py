@@ -39,7 +39,7 @@ def runtime():
 
 t_end = datetime.now() + timedelta(minutes=(runtime()))
 
-print("Computing your internet speeds.\nPress ctrl+c to exit")
+print("Connection established successfully.\nComputing your internet speeds....\nPress ctrl+c to exit")
 # TODO: Better way to exit code??
 
 st = speedtest.Speedtest()

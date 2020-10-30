@@ -10,7 +10,7 @@
 ## To-Do
 
 - `os.mkdir` dated for csv + visulation (cache)
-- Comment code
+- Comment & refactor code
 - Write up README / How to.
 - Create crontab scheduler "a crontab`scheduler (called`#`) is also provided.
 - Add license
@@ -22,7 +22,7 @@ You will be asked to enter an interval... in minutes
 You wil then be asked how long to run the test for
 Run `python vizualize.py` to generate generate a graphical representation.
 
-![Picture of Output](#)
+![Picture of Output](./Output/2020-10-30.jpg)
 
 You could set a chron job to run daily.
 
