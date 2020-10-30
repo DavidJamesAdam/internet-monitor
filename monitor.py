@@ -10,6 +10,7 @@ def user_interval():
     """[summary] add delay
 
     Returns:
+        t_interval
         [type]: [description]
     """
     while True:
@@ -20,13 +21,11 @@ def user_interval():
             print("Invalid input. Please enter a valid number of minutes: ")
 
 
-t_interval = user_interval()
-
-
 def runtime():
     """[summary] 
 
     Returns:
+        t_end
         [type]: [description]
     """
     while True:
@@ -37,19 +36,32 @@ def runtime():
             print("Invalid input. Please enter a valid number of minutes: ")
 
 
+t_interval = user_interval()
 t_end = datetime.now() + timedelta(minutes=(runtime()))
 
-print("Connection established successfully.\nComputing your internet speeds....\nPress ctrl+c to exit")
-# TODO: Better way to exit code??
+# TODO: Check connection before starting operation.
+# import requests...
+# url = "http://www.kite.com"
+# timeout = 5
+# try:
+#     request = requests.get(url, timeout=timeout)
+#     print("Connected to the Internet")
+# except (requests.ConnectionError, requests.Timeout) as exception:
+#     print("No internet connection.")
+
+# print("Connection established successfully."
+#     "\nComputing your internet speeds...."
+#     "\nPress ctrl+c to exit")
 
 st = speedtest.Speedtest()
 time_format = "%H:%M"
 date_now = datetime.now().strftime('%Y-%m-%d')
 
 # TODO: get os to mkdir ` os.mkdir(path[, mode]) `
-# Maybe ask the user where they want to save the output.
 
-# Does this need to be a csv?? maybe just make a dict???
+# os.mkdir `Output` (if not already exsisit)
+# os.mkdir `cache`
+
 
 with open(f"Cache/{date_now}.csv", mode='w') as speedtestcsv:
     write_csv = csv.DictWriter(speedtestcsv, fieldnames=[
@@ -72,10 +84,10 @@ with open(f"Cache/{date_now}.csv", mode='w') as speedtestcsv:
 
 visualize.visualize()
 
+# os.delete /cache
+
 print(f"Operation complete. Please check ---insert os path here--- for your results")
 # TODO: put os.path in here.
-
 # NOTE: How about just delete the csv when done -
-# make a cache folder for csv's then graphs go in /Output
 
 raise SystemExit
