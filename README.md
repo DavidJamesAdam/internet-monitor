@@ -4,7 +4,7 @@ _version: 0.0.2_
 
 Use Python and the speedtest-cli to continuously monitor upload and download speeds & produce a visualization using matplotlib.
 
-![Picture of Output](./Output/2020-10-30.jpg)
+![Picture of Output](./Readme/2020-10-30.jpg)
 
 ## To-Do
 

@@ -4,13 +4,15 @@ from setuptools import setup, find_packages
 with open("README.md", "r") as readme_file:
     readme = readme_file.read()
 
-requirements = ["ipython>=6", "nbformat>=4", "nbconvert>=5", "requests>=2"]
+requirements = ["matplotlib>=3",
+                "speedtest-cli>=2.1"]
 
 setup(
     name="internet-monitor",
     version="0.0.1",
     author="Andy Byers",
     author_email="a@ajb.app",
+    url="https://github.com/andybyers21/internet-monitor"
     description="Monitor your internet speeds & produce visulisations",
     long_description=readme,
     long_description_content_type="text/markdown",
@@ -19,7 +21,5 @@ setup(
     install_requires=requirements,
     classifiers=[
         "Programming Language :: Python :: 3.8",
-        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"],
-    # TODO:fix license
-    py_modules=['monitor', 'visualize']
+        "License :: OSI Approved"],
 )
