@@ -40,16 +40,18 @@ def runtime():
 t_end = datetime.now() + timedelta(minutes=(runtime()))
 
 print("Computing your internet speeds.\nPress ctrl+c to exit")
+# TODO: Better way to exit code??
 
 st = speedtest.Speedtest()
 time_format = "%H:%M"
 date_now = datetime.now().strftime('%Y-%m-%d')
 
 # TODO: get os to mkdir ` os.mkdir(path[, mode]) `
+# Maybe ask the user where they want to save the output.
 
+# Does this need to be a csv?? maybe just make a dict???
 
-# Should be a function, run test converts and write csv.
-with open(f"Output/{date_now}.csv", mode='w') as speedtestcsv:
+with open(f"Cache/{date_now}.csv", mode='w') as speedtestcsv:
     write_csv = csv.DictWriter(speedtestcsv, fieldnames=[
         'Time', 'Download Speed', 'Upload Speed'])
     write_csv.writeheader()

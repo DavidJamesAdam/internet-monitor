@@ -9,9 +9,9 @@
 
 ## To-Do
 
+- `os.mkdir` dated for csv + visulation (cache)
 - Comment code
 - Write up README / How to.
-- `os.mkdir` dated for csv + visulation (cache)
 - Create crontab scheduler "a crontab`scheduler (called`#`) is also provided.
 - Add license
 

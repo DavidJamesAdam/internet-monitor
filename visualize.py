@@ -9,7 +9,9 @@ date_now = datetime.now().strftime('%Y-%m-%d')
 
 
 def visualize():
-    with open(f"Output/{date_now}.csv", 'r') as csvfile:
+    """[summary]
+    """
+    with open(f"Cache/{date_now}.csv", 'r') as csvfile:
         plots = csv.reader(csvfile, delimiter=',')
         next(csvfile)
         for row in plots:
