@@ -30,5 +30,6 @@ You could set a chron job to run daily.
 
 ## Dependancies
 
+- `set links`
 - matplotlib
 - speedtest-cli

@@ -25,18 +25,11 @@ def visualize():
     h = 10
     d = 300
     plt.figure(figsize=(w, h), dpi=d)
-
     plt.plot(times, download, label='Download Speed', color='r')
     plt.plot(times, upload, label='Upload Speed', color='g')
     plt.xlabel('Time')
     plt.ylabel('Speed (Mb/s)')
-    plt.xticks([1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50,
-                55, 60, 65])
+    plt.xticks(rotation=45)
     plt.title(f"Internet Speed {date_now}")
     plt.legend()
     plt.savefig(f"Output/{date_now}.jpg", bbox_inches='tight')
-
-    print('Operation complete')
-
-
-visualize()
