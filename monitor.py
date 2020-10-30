@@ -3,6 +3,8 @@ from datetime import *
 import speedtest
 import time
 
+import visualize
+
 
 def user_interval():
     """[summary] add delay
@@ -66,6 +68,12 @@ with open(f"Output/{date_now}.csv", mode='w') as speedtestcsv:
                                 'Upload Speed': upload})
             time.sleep(t_interval)
 
-# TODO: auto run visualize.py
+visualize.visualize()
+
+print(f"Operation complete. Please check ---insert os path here--- for your results")
+# TODO: put os.path in here.
+
+# NOTE: How about just delete the csv when done -
+# make a cache folder for csv's then graphs go in /Output
 
 raise SystemExit

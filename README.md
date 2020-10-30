@@ -9,12 +9,9 @@
 
 ## To-Do
 
-- Update `test` filenames to produce daily graphs (name it today’s date using `datetime`).
-- Set up a check to see if a certain amount of time has passed and to stop the application after that.
-- Put output in a folder
 - Comment code
 - Write up README / How to.
-- `os.mkdir` dated for csv + visulation
+- `os.mkdir` dated for csv + visulation (cache)
 - Create crontab scheduler "a crontab`scheduler (called`#`) is also provided.
 - Add license
 
