@@ -2,7 +2,8 @@ import csv
 from datetime import *
 import speedtest
 import time
-
+import requests
+# is requests part of the python standard library?
 import visualize
 
 
@@ -39,19 +40,19 @@ def runtime():
 t_interval = user_interval()
 t_end = datetime.now() + timedelta(minutes=(runtime()))
 
-# TODO: Check connection before starting operation.
-# import requests...
-# url = "http://www.kite.com"
-# timeout = 5
-# try:
-#     request = requests.get(url, timeout=timeout)
-#     print("Connected to the Internet")
-# except (requests.ConnectionError, requests.Timeout) as exception:
-#     print("No internet connection.")
+# Check connection before starting operation.
 
-# print("Connection established successfully."
-#     "\nComputing your internet speeds...."
-#     "\nPress ctrl+c to exit")
+url = "https://www.speedtest.net"
+timeout = 5
+try:
+    request = requests.get(url, timeout=timeout)
+    print("Connection established successfully")
+except (requests.ConnectionError, requests.Timeout) as exception:
+    print("Connection failed. Please check your internet connection")
+    raise SystemExit
+
+print("\nComputing your internet speeds...."
+      "\nPress ctrl+c to exit")
 
 st = speedtest.Speedtest()
 time_format = "%H:%M"

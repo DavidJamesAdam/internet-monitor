@@ -5,7 +5,8 @@ with open("README.md", "r") as readme_file:
     readme = readme_file.read()
 
 requirements = ["matplotlib>=3",
-                "speedtest-cli>=2.1"]
+                "speedtest-cli>=2.1",
+                "requests>=2.24"]
 
 setup(
     name="internet-monitor",
