@@ -13,7 +13,7 @@ setup(
     version="0.0.1",
     author="Andy Byers",
     author_email="a@ajb.app",
-    url="https://github.com/andybyers21/internet-monitor"
+    url="https://github.com/andybyers21/internet-monitor",
     description="Monitor your internet speeds & produce visulisations",
     long_description=readme,
     long_description_content_type="text/markdown",

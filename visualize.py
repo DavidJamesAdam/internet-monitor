@@ -1,11 +1,19 @@
 import csv
 from datetime import datetime
 import matplotlib.pyplot as plt
+import os
 
+"""[summary]
+"""
 times = []
 download = []
 upload = []
 date_now = datetime.now().strftime('%Y-%m-%d')
+
+if not os.path.exists('Output'):
+    os.mkdir('Output')
+# else:
+#     pass
 
 
 def visualize():
@@ -33,3 +41,5 @@ def visualize():
     plt.title(f"Internet Speed {date_now}")
     plt.legend()
     plt.savefig(f"Output/{date_now}.jpg", bbox_inches='tight')
+
+    # delete cache here??

@@ -1,70 +1,49 @@
 import csv
-from datetime import *
+from datetime import datetime
 import speedtest
 import time
 import requests
-# is requests part of the python standard library?
+import os
+import shutil
+# check what is part of python standard library? (requirements.txt)
+
+import user
 import visualize
 
+t_interval = user.user_interval()
+t_end = user.runtime()
 
-def user_interval():
-    """[summary] add delay
-
-    Returns:
-        t_interval
-        [type]: [description]
-    """
-    while True:
-        try:
-            s = int(input("Enter an interval to test for (minutes): "))
-            return s * 60
-        except ValueError:
-            print("Invalid input. Please enter a valid number of minutes: ")
-
-
-def runtime():
-    """[summary] 
-
-    Returns:
-        t_end
-        [type]: [description]
-    """
-    while True:
-        try:
-            r = int(input("How long do you want the test to run for (minutes): "))
-            return r
-        except ValueError:
-            print("Invalid input. Please enter a valid number of minutes: ")
-
-
-t_interval = user_interval()
-t_end = datetime.now() + timedelta(minutes=(runtime()))
 
 # Check connection before starting operation.
-
-url = "https://www.speedtest.net"
-timeout = 5
 try:
-    request = requests.get(url, timeout=timeout)
-    print("Connection established successfully")
+    request = requests.get("https://www.speedtest.net", timeout=5)
+    print("\nConnection established successfully")
 except (requests.ConnectionError, requests.Timeout) as exception:
     print("Connection failed. Please check your internet connection")
     raise SystemExit
 
-print("\nComputing your internet speeds...."
-      "\nPress ctrl+c to exit")
+
+time.sleep(1)
+print("Computing your internet speeds....")
+time.sleep(0.5)
+print("Press ctrl+c to exit")
 
 st = speedtest.Speedtest()
 time_format = "%H:%M"
 date_now = datetime.now().strftime('%Y-%m-%d')
+
 
 # TODO: get os to mkdir ` os.mkdir(path[, mode]) `
 
 # os.mkdir `Output` (if not already exsisit)
 # os.mkdir `cache`
 
+if not os.path.exists('cache'):
+    os.mkdir('cache')
+# else:
+#     pass
 
-with open(f"Cache/{date_now}.csv", mode='w') as speedtestcsv:
+with open(f"cache/{date_now}.csv", mode='w') as speedtestcsv:
     write_csv = csv.DictWriter(speedtestcsv, fieldnames=[
         'Time', 'Download Speed', 'Upload Speed'])
     write_csv.writeheader()
@@ -83,12 +62,14 @@ with open(f"Cache/{date_now}.csv", mode='w') as speedtestcsv:
                                 'Upload Speed': upload})
             time.sleep(t_interval)
 
-visualize.visualize()
-
-# os.delete /cache
-
-print(f"Operation complete. Please check ---insert os path here--- for your results")
+# os.delete /cache, after visualize.
 # TODO: put os.path in here.
 # NOTE: How about just delete the csv when done -
+
+visualize.visualize()
+
+shutil.rmtree('cache')
+
+print(f"Operation complete. Please check ---insert os path here--- for your results")
 
 raise SystemExit

@@ -9,14 +9,13 @@ Use Python and the speedtest-cli to continuously monitor upload and download spe
 ## To-Do
 
 - `os.mkdir` dated for cache + visualization
-- Comment & refactor code
+- Document & refactor code
 - Write up README / How to.
-- Add license
 
 ## How to Use
 
 1. Open your favorite terminal and run `python monitor.py`.
-   You will be asked to enter time delay interval in minutes. (Time format returned is `%H:%M`).
+   You will be asked to enter time delay interval in minutes.
 2. You will then be asked how long you wish to run the test for. (Again, in minutes).
 3. A graphical representation of your internet performance will be produced and stored in `#`.
 
