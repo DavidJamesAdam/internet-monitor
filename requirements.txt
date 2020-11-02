@@ -1,5 +1,4 @@
 pip==20.2.3
-# wheel==0.33.1
 matplotlib==3.3.2
 speedtest-cli==2.1.2
 requests==2.24.0

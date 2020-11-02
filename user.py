@@ -2,11 +2,13 @@ from datetime import datetime, timedelta
 
 
 def user_interval():
-    """[summary] add delay
+    """Asks the user what interval of time they'd like to test for.
 
     Returns:
-        t_interval
-        [type]: [description]
+        int: User specified time in minutes (int)
+
+    Raises
+        ValueError: If time is not specified in the corrent format.
     """
     while True:
         try:
@@ -17,11 +19,13 @@ def user_interval():
 
 
 def runtime():
-    """[summary] 
+    """Asks the user how long they'd like the test to run for. 
 
     Returns:
-        t_end
-        [type]: [description]
+        int: User specified runtime in minutes.
+
+    Raises
+        ValueError: If time is not specified in the corrent format.
     """
     while True:
         try:
