@@ -23,7 +23,14 @@ def visualize(i):
     plt.legend(loc='upper left')
     plt.tight_layout()
 
+    for j in range(len(x)):
+        plt.annotate(f'{y1[j]}', (x[j], y1[j]), textcoords="offset points", xytext=(0,10), ha='center')
+        plt.annotate(f'{y2[j]}', (x[j], y2[j]), textcoords="offset points", xytext=(0,10), ha='center')
+
 liveGraph = FuncAnimation(plt.gcf(), visualize, interval=1000, cache_frame_data=False)
 
-plt.tight_layout()
-plt.show()
+def runGraph():
+    liveGraph
+
+    plt.tight_layout()
+    plt.show()

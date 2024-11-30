@@ -6,6 +6,7 @@ import shutil
 import speedtest
 import time
 import functions
+import visualize
 
 # Check connection before starting operation.
 try:
@@ -33,6 +34,9 @@ with open(f"cache/{date_now}.csv", mode='w') as speedtestcsv:
     write_csv = csv.DictWriter(speedtestcsv, fieldnames=[
         'Time', 'Download Speed', 'Upload Speed'])
     write_csv.writeheader()
+
+visualize.runGraph()
+print("Monitor test")
 
 while True:
     current_time = datetime.now().strftime(time_format)
