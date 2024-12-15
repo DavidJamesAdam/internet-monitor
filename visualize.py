@@ -29,6 +29,9 @@ def visualize(i):
 
 liveGraph = FuncAnimation(plt.gcf(), visualize, interval=1000, cache_frame_data=False)
 
+# plt.tight_layout()
+# plt.show()
+
 def runGraph():
     liveGraph
 
